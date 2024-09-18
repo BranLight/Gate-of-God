@@ -14,11 +14,13 @@ const NOTE_HIGHLIGHT: Color = Color.GOLD
 var note_color: Color
 var near_threshold: float = 75.0
 
-func play_note(note_index: int, can_play: bool):
-	if(Input.is_action_just_pressed("SING") and can_play):
-		note_sounds.get_child(note_index).play()
-	elif(Input.is_action_just_released("SING")):
-		note_sounds.get_child(note_index).stop()
+func play_note(note_index: int, is_near: bool):
+	var note: AudioStreamPlayer = note_sounds.get_child(note_index)
+	var singing: bool = Input.is_action_pressed("SING")
+	if(singing and is_near and !note.is_playing()):
+		note.play()
+	elif(!singing or !is_near):
+		note.stop()
 
 
 func _draw():
