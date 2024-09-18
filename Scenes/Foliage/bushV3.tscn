@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo1h31ulypmfw"]
+
+[ext_resource type="Texture2D" uid="uid://cm4jec8o4d5ob" path="res://Textures/Tile Sheets/TX Shadow Plant.png" id="1_hdj3k"]
+[ext_resource type="Texture2D" uid="uid://b0bdwo5gewkap" path="res://Textures/Tile Sheets/TX Plant.png" id="2_aonkq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0f61p"]
+radius = 8.0
+height = 36.0
+
+[node name="BushV1" type="Node2D"]
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.498039)
+texture = ExtResource("1_hdj3k")
+offset = Vector2(2, -3)
+region_enabled = true
+region_rect = Rect2(160, 206, 37, 17)
+
+[node name="Structure" type="Sprite2D" parent="."]
+texture = ExtResource("2_aonkq")
+offset = Vector2(0, -11)
+region_enabled = true
+region_rect = Rect2(156, 190, 38, 32)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_0f61p")

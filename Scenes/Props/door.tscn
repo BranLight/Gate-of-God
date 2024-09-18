@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl0npdlddhds8"]
+
+[ext_resource type="Texture2D" uid="uid://24l8qr1pdy5q" path="res://Textures/Tile Sheets/TX Props.png" id="2_44it2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82idf"]
+size = Vector2(36, 8.5)
+
+[node name="Door" type="Node2D"]
+
+[node name="Door State" type="Node2D" parent="."]
+
+[node name="Closed" type="Sprite2D" parent="Door State"]
+texture = ExtResource("2_44it2")
+offset = Vector2(0, -25)
+region_enabled = true
+region_rect = Rect2(29, 103, 37, 50)
+
+[node name="Open" type="Sprite2D" parent="Door State"]
+visible = false
+texture = ExtResource("2_44it2")
+offset = Vector2(0, -26.5)
+region_enabled = true
+region_rect = Rect2(29, 166, 37, 53)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 5.25)
+shape = SubResource("RectangleShape2D_82idf")

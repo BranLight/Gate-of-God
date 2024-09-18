@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg3wg7c80jq27"]
+
+[ext_resource type="Texture2D" uid="uid://b2dbggg5g8f8s" path="res://Textures/Tile Sheets/TX Shadow.png" id="1_cqvok"]
+[ext_resource type="Texture2D" uid="uid://24l8qr1pdy5q" path="res://Textures/Tile Sheets/TX Props.png" id="2_heqr7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82idf"]
+size = Vector2(32, 12.5)
+
+[node name="Chest" type="Node2D"]
+
+[node name="Shadow State" type="Node2D" parent="."]
+
+[node name="Closed" type="Sprite2D" parent="Shadow State"]
+modulate = Color(1, 1, 1, 0.572549)
+texture = ExtResource("1_cqvok")
+offset = Vector2(4, -9)
+region_enabled = true
+region_rect = Rect2(97, 42, 36, 19)
+
+[node name="Open" type="Sprite2D" parent="Shadow State"]
+visible = false
+modulate = Color(1, 1, 1, 0.572549)
+texture = ExtResource("1_cqvok")
+offset = Vector2(4, -15)
+region_enabled = true
+region_rect = Rect2(97, 94, 38, 31)
+
+[node name="Chest State" type="Node2D" parent="."]
+
+[node name="Closed" type="Sprite2D" parent="Chest State"]
+texture = ExtResource("2_heqr7")
+offset = Vector2(0, -15)
+region_enabled = true
+region_rect = Rect2(96, 30, 32, 31)
+
+[node name="Open" type="Sprite2D" parent="Chest State"]
+visible = false
+texture = ExtResource("2_heqr7")
+offset = Vector2(0, -24)
+region_enabled = true
+region_rect = Rect2(96, 76, 32, 49)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 3.25)
+shape = SubResource("RectangleShape2D_82idf")
