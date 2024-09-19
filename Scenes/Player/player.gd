@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+signal interacting(body: Array[Node2D])
+signal singing(body: Array[Node2D], note_queue: Array[int])
+
 @export var speed: float = 100.0
 @export var acceleration: float = 10.0
 
@@ -8,6 +11,9 @@ extends CharacterBody2D
 
 var sprite_size: Vector2 = Vector2(32.0, 32.0)
 var char_can_move: bool = true
+var can_send_note_queue: bool = false
+
+# For sending signals
 var interactable_bodies: Array[Node2D]
 var singable_bodies: Array[Node2D]
 
@@ -52,7 +58,14 @@ func note_wheel_control():
 func check_interaction():
 	if(Input.is_action_just_pressed("INTERACT")):
 		for i in range(len(interactable_bodies)):
-			interactable_bodies[i].player_interacting()
+			interacting.emit(interactable_bodies)
+			
+			
+func check_singing():
+	if(Input.is_action_pressed("SING") and can_send_note_queue):
+		for i in range(len(singable_bodies)):
+			singing.emit(singable_bodies, note_wheel.note_queue)
+		can_send_note_queue = false
 		
 
 func _ready():
@@ -63,6 +76,7 @@ func _ready():
 func _physics_process(_delta):
 	note_wheel_control()
 	check_interaction()
+	check_singing()
 	movement_setup()
 	move_and_slide()
 
@@ -81,3 +95,7 @@ func _on_area_2d_body_exited(body: Node2D):
 	if(body.is_in_group("singable")):
 		var pop_index: int = singable_bodies.find(body.get_parent())
 		singable_bodies.pop_at(pop_index)
+
+
+func _note_queue_has_updated():
+	can_send_note_queue = true

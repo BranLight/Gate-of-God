@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Songs" load_steps=2 format=3 uid="uid://bqkql68rkkrps"]
+
+[ext_resource type="Script" path="res://Songs/songs.gd" id="1_gyeh6"]
+
+[resource]
+script = ExtResource("1_gyeh6")
+portal_songs = {
+"Level One": [0, 1, 2, 3],
+"Level Three": [null, null, null, null, null, null, null, null],
+"Level Two": [null, null, null, null, null, null]
+}
+ability_songs = {
+"Blink Dash": [],
+"Self Duplicate": [],
+"Size Shift": [],
+"Slow Time": []
+}

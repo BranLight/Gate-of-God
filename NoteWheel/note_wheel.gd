@@ -1,5 +1,7 @@
 extends Control
 
+signal note_queue_has_updated
+
 @export var icon_radius: float = 200.0
 @export var cursor_radius: float = 5.0
 @export var notes: Array[Notes]
@@ -14,11 +16,21 @@ const NOTE_HIGHLIGHT: Color = Color.GOLD
 var note_color: Color
 var near_threshold: float = 75.0
 
+var note_queue: Array[int]
+var note_queue_size: int = 8
+
 func play_note(note_index: int, is_near: bool):
 	var note: AudioStreamPlayer = note_sounds.get_child(note_index)
 	var singing: bool = Input.is_action_pressed("SING")
 	if(singing and is_near and !note.is_playing()):
 		note.play()
+		
+		# Add notes to queue limited to queue size
+		note_queue.push_back(note_index)
+		if(len(note_queue) > note_queue_size):
+			note_queue.pop_front()
+		note_queue_has_updated.emit()
+			
 	elif(!singing or !is_near):
 		note.stop()
 
@@ -51,4 +63,5 @@ func _draw():
 	
 
 func _physics_process(_delta):
+	if(!note_queue.is_empty() and !is_visible()): note_queue.clear()
 	queue_redraw()

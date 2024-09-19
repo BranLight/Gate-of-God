@@ -1,8 +1,8 @@
 [gd_scene load_steps=28 format=3 uid="uid://c60iepk0gcigu"]
 
 [ext_resource type="Script" path="res://NoteWheel/note_wheel.gd" id="1_kv6ls"]
-[ext_resource type="Script" path="res://NoteWheel/Note Textures/notes.gd" id="2_i0c1v"]
-[ext_resource type="Texture2D" uid="uid://dcutb5xtntu17" path="res://NoteWheel/Note Textures/NoteTex.png" id="3_dpids"]
+[ext_resource type="Script" path="res://NoteWheel/Note Texture/notes.gd" id="2_i0c1v"]
+[ext_resource type="Texture2D" uid="uid://dcutb5xtntu17" path="res://NoteWheel/Note Texture/NoteTex.png" id="3_dpids"]
 [ext_resource type="AudioStream" uid="uid://cdd6ku6kmjq8v" path="res://Audio/A4_ooh_loop.wav" id="4_c4cm0"]
 [ext_resource type="AudioStream" uid="uid://cwrudms34iprv" path="res://Audio/B4_ooh_loop.wav" id="5_qquwg"]
 [ext_resource type="AudioStream" uid="uid://c3k7wug151a3j" path="res://Audio/C4_ooh_loop.wav" id="6_ehscm"]
