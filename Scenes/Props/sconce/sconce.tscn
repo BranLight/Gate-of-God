@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b2dbggg5g8f8s" path="res://Textures/Tile Sheets/TX Shadow.png" id="1_t5jmc"]
 [ext_resource type="Texture2D" uid="uid://24l8qr1pdy5q" path="res://Textures/Tile Sheets/TX Props.png" id="2_0j7l3"]
-[ext_resource type="Script" path="res://Scenes/Props/sconce/point_light_2d.gd" id="3_ely2n"]
+[ext_resource type="Script" path="res://Scenes/Props/Sconce/point_light_2d.gd" id="3_ely2n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82idf"]
 size = Vector2(22, 16)

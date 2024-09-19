@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://di8856vuh5c4j"]
+
+[ext_resource type="Texture2D" uid="uid://b2dbggg5g8f8s" path="res://Textures/Tile Sheets/TX Shadow.png" id="1_ykxl8"]
+[ext_resource type="Texture2D" uid="uid://24l8qr1pdy5q" path="res://Textures/Tile Sheets/TX Props.png" id="2_hex3s"]
+
+[node name="RockV1" type="Node2D"]
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.572549)
+position = Vector2(-2, 9)
+texture = ExtResource("1_ykxl8")
+offset = Vector2(4, -13)
+region_enabled = true
+region_rect = Rect2(3, 446, 60, 26)
+
+[node name="Structure" type="Sprite2D" parent="."]
+position = Vector2(0, 6)
+texture = ExtResource("2_hex3s")
+offset = Vector2(0, -18)
+region_enabled = true
+region_rect = Rect2(3, 430, 57, 42)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+build_mode = 1
+polygon = PackedVector2Array(24, 3, 15, 9, 8, 9, -18, 0, -28, -4, -28, -9, -25, -13, 28, -13, 28, -9)

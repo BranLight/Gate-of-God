@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://dcc5mwfud60qr"]
+[gd_scene load_steps=42 format=4 uid="uid://dcc5mwfud60qr"]
 
 [ext_resource type="Texture2D" uid="uid://c1l0mp2ure4ex" path="res://Textures/Tile Sheets/TX Tileset Grass.png" id="1_ryf6a"]
 [ext_resource type="Script" path="res://main.gd" id="1_x3y1i"]
@@ -6,13 +6,14 @@
 [ext_resource type="TileSet" uid="uid://4m80tbrfpfjf" path="res://Tilesets/walls.tres" id="3_2rlsv"]
 [ext_resource type="Texture2D" uid="uid://24l8qr1pdy5q" path="res://Textures/Tile Sheets/TX Props.png" id="4_b6qpd"]
 [ext_resource type="PackedScene" uid="uid://fam1hu5j5nu0" path="res://Scenes/Player/player.tscn" id="4_cdq28"]
-[ext_resource type="PackedScene" uid="uid://cawnowljlujol" path="res://Scenes/Props/portal.tscn" id="4_ehhow"]
+[ext_resource type="PackedScene" uid="uid://cawnowljlujol" path="res://Scenes/Props/Portals/portal.tscn" id="4_ehhow"]
 [ext_resource type="PackedScene" uid="uid://bwv86ip4jhkuk" path="res://Scenes/Foliage/treeV2.tscn" id="5_ge4bx"]
 [ext_resource type="PackedScene" uid="uid://d147btjyua3c8" path="res://Scenes/Foliage/treeV1.tscn" id="5_w2dag"]
 [ext_resource type="PackedScene" uid="uid://crt6g24o2vxx5" path="res://Scenes/Foliage/treeV3.tscn" id="8_jy2yd"]
 [ext_resource type="PackedScene" uid="uid://f0px4nun0dj0" path="res://Scenes/Foliage/bushV1.tscn" id="9_bb1h7"]
 [ext_resource type="PackedScene" uid="uid://dobr57pskrtxn" path="res://Scenes/Foliage/bushV2.tscn" id="10_fb2l3"]
 [ext_resource type="PackedScene" uid="uid://bo1h31ulypmfw" path="res://Scenes/Foliage/bushV3.tscn" id="11_u4s4m"]
+[ext_resource type="PackedScene" uid="uid://dns6ro7j37vma" path="res://Scenes/Foliage/GrassTufts/grass_tuft.tscn" id="12_6kph2"]
 [ext_resource type="Texture2D" uid="uid://b2dbggg5g8f8s" path="res://Textures/Tile Sheets/TX Shadow.png" id="12_bm4mt"]
 [ext_resource type="PackedScene" uid="uid://62ueoy263l4b" path="res://Scenes/Props/glyphV1.tscn" id="12_qn1lb"]
 [ext_resource type="PackedScene" uid="uid://bum1ouby0qoj8" path="res://Scenes/Props/glyphV2.tscn" id="13_3tfia"]
@@ -20,12 +21,22 @@
 [ext_resource type="PackedScene" uid="uid://fojtn1eqbv3k" path="res://Scenes/Props/barrel.tscn" id="15_ihjx0"]
 [ext_resource type="PackedScene" uid="uid://bxiclkfvhcmnh" path="res://Scenes/Props/crateV1.tscn" id="17_clm3j"]
 [ext_resource type="PackedScene" uid="uid://dk3ggxl8351rh" path="res://Scenes/Props/crateV2.tscn" id="17_x25fb"]
-[ext_resource type="PackedScene" uid="uid://bg3wg7c80jq27" path="res://Scenes/Props/chest.tscn" id="18_18xva"]
-[ext_resource type="PackedScene" uid="uid://dl0npdlddhds8" path="res://Scenes/Props/door.tscn" id="20_jsn4k"]
+[ext_resource type="PackedScene" uid="uid://bg3wg7c80jq27" path="res://Scenes/Props/Chest/chest.tscn" id="18_18xva"]
+[ext_resource type="PackedScene" uid="uid://dl0npdlddhds8" path="res://Scenes/Props/Door/door.tscn" id="20_jsn4k"]
 [ext_resource type="PackedScene" uid="uid://c1w2s46y4dr52" path="res://Scenes/Props/statue.tscn" id="21_xky6p"]
 [ext_resource type="PackedScene" uid="uid://wcvv5fdagum5" path="res://Scenes/Props/bench.tscn" id="21_yil04"]
-[ext_resource type="PackedScene" uid="uid://cmfc1qurfcfaf" path="res://Scenes/Props/sconce/sconce.tscn" id="22_5ugle"]
-[ext_resource type="PackedScene" uid="uid://dlphqwh852ani" path="res://Scenes/Props/pot.tscn" id="23_d6qkg"]
+[ext_resource type="PackedScene" uid="uid://cmfc1qurfcfaf" path="res://Scenes/Props/Sconce/sconce.tscn" id="22_5ugle"]
+[ext_resource type="PackedScene" uid="uid://dlphqwh852ani" path="res://Scenes/Props/potV2.tscn" id="23_d6qkg"]
+[ext_resource type="PackedScene" uid="uid://cqj5gubex2xhv" path="res://Scenes/Props/potV1.tscn" id="23_m1y1l"]
+[ext_resource type="PackedScene" uid="uid://bvtnex7f1cvqt" path="res://Scenes/Props/potV3.tscn" id="25_7wvwa"]
+[ext_resource type="PackedScene" uid="uid://di8856vuh5c4j" path="res://Scenes/Props/rockV1.tscn" id="26_5q8cc"]
+[ext_resource type="PackedScene" uid="uid://dyxpoj74ck4ko" path="res://Scenes/Props/rockV2.tscn" id="27_afj3d"]
+[ext_resource type="PackedScene" uid="uid://kpa41nsvtntx" path="res://Scenes/Props/rockV3.tscn" id="28_4hswy"]
+[ext_resource type="PackedScene" uid="uid://x1c6nwu6ckoc" path="res://Scenes/Props/rockV4.tscn" id="29_kps06"]
+[ext_resource type="PackedScene" uid="uid://bb52rxaspdl8s" path="res://Scenes/Props/rockV6.tscn" id="30_njhfb"]
+[ext_resource type="PackedScene" uid="uid://cewn63tiv6exv" path="res://Scenes/Props/rockV5.tscn" id="31_8b2ov"]
+[ext_resource type="PackedScene" uid="uid://bj766fue4c1nr" path="res://Scenes/Props/signV2.tscn" id="32_gqnme"]
+[ext_resource type="PackedScene" uid="uid://c8xcsxek3i5f6" path="res://Scenes/Props/signV1.tscn" id="33_vjt5m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vi1dl"]
 texture = ExtResource("1_ryf6a")
@@ -219,6 +230,17 @@ position = Vector2(-104, 616)
 [node name="BushV3" parent="Foliage" instance=ExtResource("11_u4s4m")]
 position = Vector2(-376, 640)
 
+[node name="GrassTufts" type="Node2D" parent="Foliage"]
+y_sort_enabled = true
+
+[node name="GrassTuft" parent="Foliage/GrassTufts" instance=ExtResource("12_6kph2")]
+position = Vector2(-345, 644)
+
+[node name="GrassTuft2" parent="Foliage/GrassTufts" instance=ExtResource("12_6kph2")]
+position = Vector2(-325, 643)
+grass_choice_x = 2.0
+grass_choice_y = 1.0
+
 [node name="Props" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -232,7 +254,7 @@ position = Vector2(144, 664)
 position = Vector2(240, 648)
 
 [node name="CrateV2" parent="Props" instance=ExtResource("17_x25fb")]
-position = Vector2(392, 632)
+position = Vector2(384, 640)
 
 [node name="CrateV1" parent="Props" instance=ExtResource("17_clm3j")]
 position = Vector2(336, 672)
@@ -244,10 +266,10 @@ position = Vector2(-224, 536)
 position = Vector2(-96, 672)
 
 [node name="Barrel" parent="Props" instance=ExtResource("15_ihjx0")]
-position = Vector2(440, 672)
+position = Vector2(424, 672)
 
 [node name="Statue" parent="Props" instance=ExtResource("21_xky6p")]
-position = Vector2(-360, 632)
+position = Vector2(-336, 640)
 
 [node name="Sconce" parent="Props" instance=ExtResource("22_5ugle")]
 position = Vector2(-160, 536)
@@ -256,18 +278,48 @@ position = Vector2(-160, 536)
 position = Vector2(-288, 536)
 
 [node name="Door" parent="Props" instance=ExtResource("20_jsn4k")]
-position = Vector2(208, 576)
+position = Vector2(-224, 680)
 
-[node name="Pot" parent="Props" instance=ExtResource("23_d6qkg")]
-position = Vector2(304, 600)
+[node name="PotV2" parent="Props" instance=ExtResource("23_d6qkg")]
+position = Vector2(312, 584)
+
+[node name="PotV1" parent="Props" instance=ExtResource("23_m1y1l")]
+position = Vector2(280, 568)
+
+[node name="PotV3" parent="Props" instance=ExtResource("25_7wvwa")]
+position = Vector2(328, 560)
+
+[node name="RockV1" parent="Props" instance=ExtResource("26_5q8cc")]
+position = Vector2(-432, 664)
+
+[node name="RockV2" parent="Props" instance=ExtResource("27_afj3d")]
+position = Vector2(-384, 672)
+
+[node name="RockV3" parent="Props" instance=ExtResource("28_4hswy")]
+position = Vector2(-408, 688)
+
+[node name="RockV4" parent="Props" instance=ExtResource("29_kps06")]
+position = Vector2(-496, 632)
+
+[node name="RockV5" parent="Props" instance=ExtResource("30_njhfb")]
+position = Vector2(-560, 632)
+
+[node name="RockV6" parent="Props" instance=ExtResource("31_8b2ov")]
+position = Vector2(-528, 592)
+
+[node name="Statue2" parent="Props" instance=ExtResource("32_gqnme")]
+position = Vector2(87, 549)
+
+[node name="Statue3" parent="Props" instance=ExtResource("33_vjt5m")]
+position = Vector2(142, 578)
 
 [node name="Player" parent="." instance=ExtResource("4_cdq28")]
-position = Vector2(-224, 600)
+position = Vector2(-224, 616)
 
 [node name="TxProps" type="Sprite2D" parent="."]
-position = Vector2(1384, 512)
+position = Vector2(1408, 513)
 texture = ExtResource("4_b6qpd")
 
 [node name="TxShadow" type="Sprite2D" parent="."]
-position = Vector2(1904, 512)
+position = Vector2(1408, 512)
 texture = ExtResource("12_bm4mt")

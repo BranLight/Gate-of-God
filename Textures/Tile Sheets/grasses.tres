@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://c6ougun2uc18e"]
+
+[ext_resource type="Texture2D" uid="uid://b0bdwo5gewkap" path="res://Textures/Tile Sheets/TX Plant.png" id="1_eyd2w"]
+
+[resource]
+atlas = ExtResource("1_eyd2w")
+region = Rect2(0, 384, 128, 128)

@@ -1,7 +1,7 @@
 extends PointLight2D
 
 var time_passed: float = 0.0
-var noise: Noise = preload("res://Scenes/Props/sconce/noise.tres")
+var noise: Noise = preload("res://Scenes/Props/Sconce/noise.tres")
 
 func _process(delta):
 	time_passed += delta

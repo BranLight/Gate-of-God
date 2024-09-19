@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj766fue4c1nr"]
+
+[ext_resource type="Texture2D" uid="uid://b2dbggg5g8f8s" path="res://Textures/Tile Sheets/TX Shadow.png" id="1_tp6fk"]
+[ext_resource type="Texture2D" uid="uid://24l8qr1pdy5q" path="res://Textures/Tile Sheets/TX Props.png" id="2_gnvyb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nbbag"]
+radius = 3.04138
+
+[node name="Statue" type="Node2D"]
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.572549)
+position = Vector2(2, 3)
+texture = ExtResource("1_tp6fk")
+offset = Vector2(1, -10)
+region_enabled = true
+region_rect = Rect2(100, 240, 26, 16)
+
+[node name="Structure" type="Sprite2D" parent="."]
+position = Vector2(2, 3)
+texture = ExtResource("2_gnvyb")
+offset = Vector2(-3, -17)
+region_enabled = true
+region_rect = Rect2(96, 224, 27, 32)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("CircleShape2D_nbbag")

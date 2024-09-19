@@ -8,6 +8,8 @@ extends CharacterBody2D
 
 var sprite_size: Vector2 = Vector2(32.0, 32.0)
 var char_can_move: bool = true
+var interactable_bodies: Array[Node2D]
+var singable_bodies: Array[Node2D]
 
 
 func movement_setup():
@@ -46,6 +48,12 @@ func note_wheel_control():
 	if(Input.is_action_just_pressed("NOTEWHEEL")):
 		note_wheel.set_visible(!note_wheel.is_visible())
 	
+		
+func check_interaction():
+	if(Input.is_action_just_pressed("INTERACT")):
+		for i in range(len(interactable_bodies)):
+			interactable_bodies[i].player_interacting()
+		
 
 func _ready():
 	note_wheel.set_scale(Vector2(0.25, 0.25))
@@ -54,5 +62,22 @@ func _ready():
 
 func _physics_process(_delta):
 	note_wheel_control()
+	check_interaction()
 	movement_setup()
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(body: Node2D):
+	if(body.is_in_group("interactable")):
+		interactable_bodies.append(body.get_parent())
+	if(body.is_in_group("singable")):
+		singable_bodies.append(body.get_parent())
+		
+
+func _on_area_2d_body_exited(body: Node2D):
+	if(body.is_in_group("interactable")):
+		var pop_index: int = interactable_bodies.find(body.get_parent())
+		interactable_bodies.pop_at(pop_index)
+	if(body.is_in_group("singable")):
+		var pop_index: int = singable_bodies.find(body.get_parent())
+		singable_bodies.pop_at(pop_index)

@@ -7,7 +7,7 @@
 radius = 6.0
 height = 22.0
 
-[node name="Pot" type="Node2D"]
+[node name="PotV2" type="Node2D"]
 
 [node name="Shadow" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.572549)

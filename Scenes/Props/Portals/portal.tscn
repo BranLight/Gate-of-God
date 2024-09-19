@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cawnowljlujol"]
+[gd_scene load_steps=5 format=3 uid="uid://cawnowljlujol"]
 
 [ext_resource type="Texture2D" uid="uid://b2dbggg5g8f8s" path="res://Textures/Tile Sheets/TX Shadow.png" id="1_dn6k3"]
+[ext_resource type="Script" path="res://Scenes/Props/Portals/portal.gd" id="1_tbt84"]
 [ext_resource type="Texture2D" uid="uid://24l8qr1pdy5q" path="res://Textures/Tile Sheets/TX Props.png" id="2_tfqm7"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_x3u00"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_hfm8k"]
 radius = 32.0
 
 [node name="Portal" type="Node2D"]
 texture_filter = 1
+script = ExtResource("1_tbt84")
 
 [node name="Shadow" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.498039)
@@ -20,11 +22,6 @@ region_rect = Rect2(353, 269, 97, 72)
 texture = ExtResource("2_tfqm7")
 region_enabled = true
 region_rect = Rect2(353, 269, 94, 72)
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_x3u00")
 
 [node name="Runes" type="Node2D" parent="."]
 position = Vector2(0, -1)
@@ -52,3 +49,9 @@ position = Vector2(-38.5, -2.5)
 texture = ExtResource("2_tfqm7")
 region_enabled = true
 region_rect = Rect2(330, 266, 5, 5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["singable"]]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_hfm8k")

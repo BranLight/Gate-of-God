@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cewn63tiv6exv"]
+
+[ext_resource type="Texture2D" uid="uid://b2dbggg5g8f8s" path="res://Textures/Tile Sheets/TX Shadow.png" id="1_usu7n"]
+[ext_resource type="Texture2D" uid="uid://24l8qr1pdy5q" path="res://Textures/Tile Sheets/TX Props.png" id="2_c4u3r"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k1euq"]
+radius = 6.0
+height = 24.0
+
+[node name="RockV5" type="Node2D"]
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.572549)
+position = Vector2(-2, 9)
+texture = ExtResource("1_usu7n")
+offset = Vector2(4, -13)
+region_enabled = true
+region_rect = Rect2(69, 494, 24, 12)
+
+[node name="Structure" type="Sprite2D" parent="."]
+position = Vector2(0, 12)
+texture = ExtResource("2_c4u3r")
+offset = Vector2(0, -18)
+region_enabled = true
+region_rect = Rect2(68, 487, 24, 19)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_k1euq")
