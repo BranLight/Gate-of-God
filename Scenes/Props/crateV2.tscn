@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dk3ggxl8351rh"]
 
-[ext_resource type="Texture2D" uid="uid://b2dbggg5g8f8s" path="res://Textures/Tile Sheets/TX Shadow.png" id="1_3nvq2"]
-[ext_resource type="Texture2D" uid="uid://24l8qr1pdy5q" path="res://Textures/Tile Sheets/TX Props.png" id="2_7n0vc"]
+[ext_resource type="Texture2D" uid="uid://b2dbggg5g8f8s" path="res://Textures/Cainos Tile Sheets/TX Shadow.png" id="1_3nvq2"]
+[ext_resource type="Texture2D" uid="uid://24l8qr1pdy5q" path="res://Textures/Cainos Tile Sheets/TX Props.png" id="2_7n0vc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82idf"]
 size = Vector2(26, 19)

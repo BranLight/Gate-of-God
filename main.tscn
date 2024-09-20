@@ -1,10 +1,10 @@
-[gd_scene load_steps=42 format=4 uid="uid://dcc5mwfud60qr"]
+[gd_scene load_steps=50 format=4 uid="uid://dcc5mwfud60qr"]
 
-[ext_resource type="Texture2D" uid="uid://c1l0mp2ure4ex" path="res://Textures/Tile Sheets/TX Tileset Grass.png" id="1_ryf6a"]
+[ext_resource type="Texture2D" uid="uid://c1l0mp2ure4ex" path="res://Textures/Cainos Tile Sheets/TX Tileset Grass.png" id="1_ryf6a"]
 [ext_resource type="Script" path="res://main.gd" id="1_x3y1i"]
-[ext_resource type="Texture2D" uid="uid://byiiahpabe2ii" path="res://Textures/Tile Sheets/TX Tileset Stone Ground.png" id="2_r7ia8"]
+[ext_resource type="Texture2D" uid="uid://byiiahpabe2ii" path="res://Textures/Cainos Tile Sheets/TX Tileset Stone Ground.png" id="2_r7ia8"]
 [ext_resource type="TileSet" uid="uid://4m80tbrfpfjf" path="res://Tilesets/walls.tres" id="3_2rlsv"]
-[ext_resource type="Texture2D" uid="uid://24l8qr1pdy5q" path="res://Textures/Tile Sheets/TX Props.png" id="4_b6qpd"]
+[ext_resource type="Texture2D" uid="uid://24l8qr1pdy5q" path="res://Textures/Cainos Tile Sheets/TX Props.png" id="4_b6qpd"]
 [ext_resource type="PackedScene" uid="uid://fam1hu5j5nu0" path="res://Scenes/Player/player.tscn" id="4_cdq28"]
 [ext_resource type="PackedScene" uid="uid://cawnowljlujol" path="res://Scenes/Props/Portal/portal.tscn" id="4_ehhow"]
 [ext_resource type="PackedScene" uid="uid://bwv86ip4jhkuk" path="res://Scenes/Foliage/treeV2.tscn" id="5_ge4bx"]
@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dobr57pskrtxn" path="res://Scenes/Foliage/bushV2.tscn" id="10_fb2l3"]
 [ext_resource type="PackedScene" uid="uid://bo1h31ulypmfw" path="res://Scenes/Foliage/bushV3.tscn" id="11_u4s4m"]
 [ext_resource type="PackedScene" uid="uid://dns6ro7j37vma" path="res://Scenes/Foliage/GrassTuft/grass_tuft.tscn" id="12_6kph2"]
-[ext_resource type="Texture2D" uid="uid://b2dbggg5g8f8s" path="res://Textures/Tile Sheets/TX Shadow.png" id="12_bm4mt"]
+[ext_resource type="Texture2D" uid="uid://b2dbggg5g8f8s" path="res://Textures/Cainos Tile Sheets/TX Shadow.png" id="12_bm4mt"]
 [ext_resource type="PackedScene" uid="uid://62ueoy263l4b" path="res://Scenes/Props/glyphV1.tscn" id="12_qn1lb"]
 [ext_resource type="PackedScene" uid="uid://bum1ouby0qoj8" path="res://Scenes/Props/glyphV2.tscn" id="13_3tfia"]
 [ext_resource type="PackedScene" uid="uid://b0n2lbmh364w" path="res://Scenes/Props/glyphV3.tscn" id="14_nct27"]
@@ -37,6 +37,13 @@
 [ext_resource type="PackedScene" uid="uid://cewn63tiv6exv" path="res://Scenes/Props/rockV5.tscn" id="31_8b2ov"]
 [ext_resource type="PackedScene" uid="uid://bj766fue4c1nr" path="res://Scenes/Props/signV2.tscn" id="32_gqnme"]
 [ext_resource type="PackedScene" uid="uid://c8xcsxek3i5f6" path="res://Scenes/Props/signV1.tscn" id="33_vjt5m"]
+[ext_resource type="PackedScene" uid="uid://dpw8qmxiu2gy7" path="res://Scenes/Props/fountain.tscn" id="35_f6faw"]
+[ext_resource type="Texture2D" uid="uid://but255n4k2xaw" path="res://Textures/FreddyPixelArt Tile Sheets/Props/Atlas-Props.png" id="38_hvsji"]
+[ext_resource type="Texture2D" uid="uid://b86rca7sujkrk" path="res://Textures/FreddyPixelArt Tile Sheets/Props/generic_estructure1-1-on grass.png" id="39_d1wql"]
+[ext_resource type="Texture2D" uid="uid://bhxqw81qkqdw0" path="res://Textures/FreddyPixelArt Tile Sheets/Tilesets/demonstration.png" id="40_u47cl"]
+[ext_resource type="Texture2D" uid="uid://ojcemlbrlje2" path="res://Textures/FreddyPixelArt Tile Sheets/Props/shrine or fountain 160x128-on grass.png" id="41_o8t16"]
+[ext_resource type="Script" path="res://audio_handler.gd" id="43_d1kdg"]
+[ext_resource type="AudioStream" uid="uid://2q25rkjvxyk4" path="res://Audio/Music/Forest_Ambience.mp3" id="43_gfl55"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vi1dl"]
 texture = ExtResource("1_ryf6a")
@@ -168,6 +175,34 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_t2n2l")
 
+[sub_resource type="GDScript" id="GDScript_1i7qg"]
+script/source = "extends AudioStreamPlayer
+
+#var ambience_volume_tween: Tween
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta):
+	pass
+
+
+## If the player is singing we don't want other audio playing
+#func _on_player_is_singing(singing):
+	#if(ambience_volume_tween): ambience_volume_tween.kill()
+	#ambience_volume_tween = get_tree().create_tween()
+	#if(singing):
+		#ambience_volume_tween.tween_property(self, \"volume_db\", -80.0, 3.0)
+		#await ambience_volume_tween.finished
+		#self.stop()
+	#else:
+		#self.play()
+		#ambience_volume_tween.tween_property(self, \"volume_db\", 0.0, 2.0)
+"
+
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_x3y1i")
@@ -264,7 +299,7 @@ position = Vector2(-256, 280)
 position = Vector2(-128, 416)
 
 [node name="Barrel" parent="Props" instance=ExtResource("15_ihjx0")]
-position = Vector2(489, 419)
+position = Vector2(496, 416)
 
 [node name="Statue" parent="Props" instance=ExtResource("21_xky6p")]
 position = Vector2(-368, 384)
@@ -306,13 +341,16 @@ position = Vector2(-592, 376)
 position = Vector2(-560, 336)
 
 [node name="Statue2" parent="Props" instance=ExtResource("32_gqnme")]
-position = Vector2(152, 296)
+position = Vector2(-80, 104)
 
 [node name="Statue3" parent="Props" instance=ExtResource("33_vjt5m")]
-position = Vector2(207, 325)
+position = Vector2(88, -152)
+
+[node name="Fountain" parent="Props" instance=ExtResource("35_f6faw")]
+position = Vector2(-736, 352)
 
 [node name="Player" parent="." instance=ExtResource("4_cdq28")]
-position = Vector2(-256, 344)
+position = Vector2(-48, 296)
 
 [node name="TxProps" type="Sprite2D" parent="."]
 position = Vector2(1184, 257)
@@ -322,6 +360,38 @@ texture = ExtResource("4_b6qpd")
 position = Vector2(1184, 256)
 texture = ExtResource("12_bm4mt")
 
+[node name="Atlas-props" type="Sprite2D" parent="."]
+position = Vector2(1216, -272)
+texture = ExtResource("38_hvsji")
+
+[node name="GenericEstructure1-1-onGrass" type="Sprite2D" parent="."]
+position = Vector2(1576, -176)
+texture = ExtResource("39_d1wql")
+
+[node name="Demonstration" type="Sprite2D" parent="."]
+position = Vector2(2304, 160)
+texture = ExtResource("40_u47cl")
+
+[node name="ShrineOrFountain160x128-onGrass" type="Sprite2D" parent="."]
+position = Vector2(1600, -576)
+texture = ExtResource("41_o8t16")
+
+[node name="AudioHandler" type="Node2D" parent="."]
+script = ExtResource("43_d1kdg")
+
+[node name="Ambience" type="AudioStreamPlayer" parent="AudioHandler"]
+stream = ExtResource("43_gfl55")
+autoplay = true
+script = SubResource("GDScript_1i7qg")
+
+[connection signal="level_up" from="Portals/Portal" to="." method="_on_portal_level_up"]
+[connection signal="level_up" from="Portals/Portal2" to="." method="_on_portal_level_up"]
+[connection signal="level_up" from="Portals/Portal3" to="." method="_on_portal_level_up"]
+[connection signal="level_up" from="Portals/Portal4" to="." method="_on_portal_level_up"]
 [connection signal="interacting" from="Player" to="Props/Chest" method="_on_player_interacting"]
 [connection signal="interacting" from="Player" to="Props/Door" method="_on_player_interacting"]
+[connection signal="player_is_singing" from="Player" to="AudioHandler" method="_on_player_is_singing"]
 [connection signal="singing" from="Player" to="Portals/Portal" method="_on_player_singing"]
+[connection signal="singing" from="Player" to="Portals/Portal2" method="_on_player_singing"]
+[connection signal="singing" from="Player" to="Portals/Portal3" method="_on_player_singing"]
+[connection signal="singing" from="Player" to="Portals/Portal4" method="_on_player_singing"]

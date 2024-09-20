@@ -6,8 +6,8 @@
 script = ExtResource("1_gyeh6")
 portal_songs = {
 "Level One": [0, 1, 2, 3],
-"Level Three": [null, null, null, null, null, null, null, null],
-"Level Two": [null, null, null, null, null, null]
+"Level Three": [0, 1, 2, 3, 4, 5, 6, 7],
+"Level Two": [0, 1, 2, 3, 4, 5]
 }
 ability_songs = {
 "Blink Dash": [],

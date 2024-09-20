@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dns6ro7j37vma"]
 
 [ext_resource type="Script" path="res://Scenes/Foliage/GrassTuft/grass_tuft.gd" id="1_gx5lv"]
-[ext_resource type="Texture2D" uid="uid://c6ougun2uc18e" path="res://Textures/Tile Sheets/grasses.tres" id="2_g5evk"]
+[ext_resource type="Texture2D" uid="uid://c6ougun2uc18e" path="res://Textures/Cainos Tile Sheets/grasses.tres" id="2_g5evk"]
 
 [node name="GrassTuft" type="Node2D"]
 script = ExtResource("1_gx5lv")

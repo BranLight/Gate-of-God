@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://f0px4nun0dj0"]
 
-[ext_resource type="Texture2D" uid="uid://cm4jec8o4d5ob" path="res://Textures/Tile Sheets/TX Shadow Plant.png" id="1_gu0gx"]
-[ext_resource type="Texture2D" uid="uid://b0bdwo5gewkap" path="res://Textures/Tile Sheets/TX Plant.png" id="2_ljaw0"]
+[ext_resource type="Texture2D" uid="uid://cm4jec8o4d5ob" path="res://Textures/Cainos Tile Sheets/TX Shadow Plant.png" id="1_gu0gx"]
+[ext_resource type="Texture2D" uid="uid://b0bdwo5gewkap" path="res://Textures/Cainos Tile Sheets/TX Plant.png" id="2_ljaw0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0f61p"]
 radius = 8.0
