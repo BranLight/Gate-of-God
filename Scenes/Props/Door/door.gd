@@ -3,13 +3,14 @@ extends Node2D
 @onready var door_state = $"Door State"
 @onready var static_body_2d = $StaticBody2D
 
+var is_open: bool
 
 func _ready():
-	pass
+	is_open = false
 	
 
 func _on_player_interacting(body):
-	if(body.has(self)):
+	if(body.has(self) and !is_open):
 		var layer_one: int = static_body_2d.get_collision_layer_value(1)
 		var layer_two: int = static_body_2d.get_collision_layer_value(2)
 		
@@ -20,3 +21,5 @@ func _on_player_interacting(body):
 		
 		for i in range(2):
 			door_states[i].set_visible(!door_states[i].is_visible())
+		
+		is_open = true

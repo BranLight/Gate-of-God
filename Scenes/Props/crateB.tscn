@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dk3ggxl8351rh"]
+
+[ext_resource type="Texture2D" uid="uid://b2dbggg5g8f8s" path="res://Textures/Cainos Tile Sheets/TX Shadow.png" id="1_3nvq2"]
+[ext_resource type="Texture2D" uid="uid://24l8qr1pdy5q" path="res://Textures/Cainos Tile Sheets/TX Props.png" id="2_7n0vc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82idf"]
+size = Vector2(26, 19)
+
+[node name="CrateB" type="Node2D"]
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.572549)
+texture = ExtResource("1_3nvq2")
+offset = Vector2(4, -13)
+region_enabled = true
+region_rect = Rect2(163, 98, 31, 27)
+
+[node name="Structure" type="Sprite2D" parent="."]
+texture = ExtResource("2_7n0vc")
+offset = Vector2(0, -19)
+region_enabled = true
+region_rect = Rect2(163, 86, 26, 39)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_82idf")

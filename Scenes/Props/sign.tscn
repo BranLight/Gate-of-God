@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccnwr04a0sube"]
+
+[ext_resource type="Texture2D" uid="uid://b2dbggg5g8f8s" path="res://Textures/Cainos Tile Sheets/TX Shadow.png" id="1_8r0sv"]
+[ext_resource type="Texture2D" uid="uid://24l8qr1pdy5q" path="res://Textures/Cainos Tile Sheets/TX Props.png" id="2_xp16n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nbbag"]
+radius = 3.04138
+
+[node name="Sign" type="Node2D"]
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.572549)
+texture = ExtResource("1_8r0sv")
+offset = Vector2(4.61, -21)
+region_enabled = true
+region_rect = Rect2(102, 176, 26, 16)
+
+[node name="Structure" type="Sprite2D" parent="."]
+texture = ExtResource("2_xp16n")
+offset = Vector2(1.5, -29)
+region_enabled = true
+region_rect = Rect2(99, 160, 27, 32)
+
+[node name="Shadow2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.572549)
+texture = ExtResource("1_8r0sv")
+offset = Vector2(2, -6)
+region_enabled = true
+region_rect = Rect2(100, 240, 26, 16)
+
+[node name="Structure2" type="Sprite2D" parent="."]
+texture = ExtResource("2_xp16n")
+offset = Vector2(-1.5, -14)
+region_enabled = true
+region_rect = Rect2(96, 224, 27, 32)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("CircleShape2D_nbbag")

@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvtnex7f1cvqt"]
+
+[ext_resource type="Texture2D" uid="uid://b2dbggg5g8f8s" path="res://Textures/Cainos Tile Sheets/TX Shadow.png" id="1_e6ya2"]
+[ext_resource type="Texture2D" uid="uid://24l8qr1pdy5q" path="res://Textures/Cainos Tile Sheets/TX Props.png" id="2_qjjaw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_58fdq"]
+radius = 6.0
+height = 14.0
+
+[node name="PotC" type="Node2D"]
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.572549)
+position = Vector2(-1, 4)
+texture = ExtResource("1_e6ya2")
+offset = Vector2(4, -13)
+region_enabled = true
+region_rect = Rect2(166, 363, 22, 17)
+
+[node name="Structure" type="Sprite2D" parent="."]
+position = Vector2(0, 2)
+texture = ExtResource("2_qjjaw")
+offset = Vector2(0, -18)
+region_enabled = true
+region_rect = Rect2(165, 348, 21, 32)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_58fdq")

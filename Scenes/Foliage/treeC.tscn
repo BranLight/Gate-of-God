@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://crt6g24o2vxx5"]
+
+[ext_resource type="Texture2D" uid="uid://cm4jec8o4d5ob" path="res://Textures/Cainos Tile Sheets/TX Shadow Plant.png" id="1_2l827"]
+[ext_resource type="Texture2D" uid="uid://b0bdwo5gewkap" path="res://Textures/Cainos Tile Sheets/TX Plant.png" id="2_o5lgy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vq1an"]
+radius = 5.0
+height = 16.0
+
+[node name="TreeC" type="Node2D"]
+texture_filter = 1
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.498039)
+z_index = 1
+y_sort_enabled = true
+texture = ExtResource("1_2l827")
+offset = Vector2(0, -0.595)
+region_enabled = true
+region_rect = Rect2(304, 111, 74, 40)
+
+[node name="Structure" type="Sprite2D" parent="."]
+texture = ExtResource("2_o5lgy")
+offset = Vector2(-2, -60)
+region_enabled = true
+region_rect = Rect2(295, 31, 79, 120)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CapsuleShape2D_vq1an")
