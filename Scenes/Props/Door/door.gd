@@ -6,7 +6,7 @@ extends Node2D
 var is_open: bool
 
 func _ready():
-	is_open = false
+	is_open = true
 	
 
 func _on_player_interacting(body):

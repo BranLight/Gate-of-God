@@ -42,7 +42,7 @@ offset = Vector2(0, -24)
 region_enabled = true
 region_rect = Rect2(96, 76, 32, 49)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["interactable"]]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, -9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]

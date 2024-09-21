@@ -10,10 +10,12 @@ signal player_is_singing(singing: bool)
 @onready var animation_player = $AnimationPlayer
 @onready var note_wheel: Control = $NoteWheel
 @onready var footsteps = $Footsteps
+@onready var button_prompt = $ButtonPrompt
 
 var sprite_size: Vector2 = Vector2(32.0, 32.0)
 var char_can_move: bool = true
 var can_send_note_queue: bool = false
+		
 
 # For sending signals
 var interactable_bodies: Array[Node2D]
@@ -77,13 +79,35 @@ func check_singing():
 			singing.emit(singable_bodies, note_wheel.note_queue)
 		can_send_note_queue = false
 		
+
+func set_button_prompt_display():
+	if(interactable_bodies):
+		button_prompt.show()
+		button_prompt.play("Prompt")
+	else:
+		button_prompt.hide()
+		button_prompt.stop()
 		
+		
+# Called from animation player
 func play_footstep():
 	var footstep_sounds: Array[Node] = footsteps.get_children()
 	for sound in footstep_sounds:
 		if(sound.is_playing()):
 			sound.stop()
 	footstep_sounds.pick_random().play()
+	
+
+func check_bodies_popped_early():
+	for body in interactable_bodies:
+		if !body.is_in_group("interactable"):
+			var pop_interact_index: int = interactable_bodies.find(body)
+			if(pop_interact_index >= 0): interactable_bodies.pop_at(pop_interact_index)
+	for body in singable_bodies:
+		if !body.is_in_group("singable"):
+			var pop_interact_index: int = singable_bodies.find(body)
+			if(pop_interact_index >= 0): singable_bodies.pop_at(pop_interact_index)
+	
 	
 func _ready():
 	note_wheel.set_scale(Vector2(0.25, 0.25))
@@ -94,24 +118,24 @@ func _physics_process(_delta):
 	note_wheel_control()
 	check_interaction()
 	check_singing()
+	check_bodies_popped_early()
+	set_button_prompt_display()
 	movement_setup()
 	move_and_slide()
 
 
 func _on_area_2d_body_entered(body: Node2D):
-	if(body.is_in_group("interactable")):
+	if(body.get_parent().is_in_group("interactable")):
 		interactable_bodies.append(body.get_parent())
-	if(body.is_in_group("singable")):
+	if(body.get_parent().is_in_group("singable")):
 		singable_bodies.append(body.get_parent())
 		
 
 func _on_area_2d_body_exited(body: Node2D):
-	if(body.is_in_group("interactable")):
-		var pop_index: int = interactable_bodies.find(body.get_parent())
-		interactable_bodies.pop_at(pop_index)
-	if(body.is_in_group("singable")):
-		var pop_index: int = singable_bodies.find(body.get_parent())
-		singable_bodies.pop_at(pop_index)
+	var pop_interact_index: int = interactable_bodies.find(body.get_parent())
+	if(pop_interact_index >= 0): interactable_bodies.pop_at(pop_interact_index)
+	var pop_sing_index: int = singable_bodies.find(body.get_parent())
+	if(pop_sing_index >= 0): singable_bodies.pop_at(pop_sing_index)
 
 
 func _note_queue_has_updated():

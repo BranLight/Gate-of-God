@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://62ueoy263l4b"]
+[gd_scene load_steps=5 format=3 uid="uid://62ueoy263l4b"]
 
 [ext_resource type="Texture2D" uid="uid://b2dbggg5g8f8s" path="res://Textures/Cainos Tile Sheets/TX Shadow.png" id="1_ot2li"]
+[ext_resource type="Script" path="res://Scenes/Props/Glyphs/glyph.gd" id="1_tcg6t"]
 [ext_resource type="Texture2D" uid="uid://24l8qr1pdy5q" path="res://Textures/Cainos Tile Sheets/TX Props.png" id="2_pfrcw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4vmcv"]
 size = Vector2(26, 20)
 
-[node name="GlyphA" type="Node2D"]
+[node name="GlyphA" type="Node2D" node_paths=PackedStringArray("rune_sprite")]
+script = ExtResource("1_tcg6t")
+rune_sprite = NodePath("Runes")
+show_runes = null
 
 [node name="Shadow" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.572549)
@@ -22,6 +26,7 @@ region_enabled = true
 region_rect = Rect2(227, 9, 26, 52)
 
 [node name="Runes" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_pfrcw")
 offset = Vector2(0.5, -19)
 region_enabled = true
