@@ -1,6 +1,9 @@
 @tool
 extends Node2D
 
+signal unlock_rune(rune: Array[int])
+
+@export var rune_index: Array[int]
 @export var rune_sprite: Sprite2D
 @export var show_runes: bool :
 	set(value):
@@ -21,4 +24,5 @@ func _on_player_interacting(body):
 	if(body.has(self)):
 		set_rune_visibility(false)
 		remove_from_group("interactable")
+		unlock_rune.emit(rune_index)
 		

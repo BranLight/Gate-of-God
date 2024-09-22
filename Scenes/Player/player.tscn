@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://fam1hu5j5nu0"]
+[gd_scene load_steps=24 format=3 uid="uid://fam1hu5j5nu0"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_vd2qa"]
 [ext_resource type="Texture2D" uid="uid://dvo4us5hlloq7" path="res://Textures/Button Prompts/xbox_button_color_x.png" id="2_3vf3s"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://cuuwd1cv8xcjo" path="res://Audio/Walking/footstep2.wav" id="6_bf0ln"]
 [ext_resource type="AudioStream" uid="uid://dyf7vg6sl6u5i" path="res://Audio/Walking/footstep4.wav" id="8_vaavn"]
 [ext_resource type="Texture2D" uid="uid://ch1ghka4a7d6v" path="res://Textures/Button Prompts/xbox_button_color_x_outline.png" id="10_o0s4v"]
+[ext_resource type="AudioStream" uid="uid://qls33g8myqlc" path="res://Audio/Sound Effects/Menu2A.wav" id="11_jmo7h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i6g2u"]
 atlas = ExtResource("2_3vf3s")
@@ -319,6 +320,10 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_iyxya")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_jmo7h")
+volume_db = -15.0
 
 [connection signal="note_queue_has_updated" from="NoteWheel" to="." method="_note_queue_has_updated"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

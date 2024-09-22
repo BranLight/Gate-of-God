@@ -9,8 +9,8 @@ size = Vector2(26, 20)
 
 [node name="GlyphA" type="Node2D" node_paths=PackedStringArray("rune_sprite")]
 script = ExtResource("1_tcg6t")
+rune_index = null
 rune_sprite = NodePath("Runes")
-show_runes = null
 
 [node name="Shadow" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.572549)

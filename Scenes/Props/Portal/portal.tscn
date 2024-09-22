@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cawnowljlujol"]
+[gd_scene load_steps=6 format=3 uid="uid://cawnowljlujol"]
 
 [ext_resource type="Texture2D" uid="uid://b2dbggg5g8f8s" path="res://Textures/Cainos Tile Sheets/TX Shadow.png" id="1_dn6k3"]
 [ext_resource type="Script" path="res://Scenes/Props/Portal/portal.gd" id="1_tbt84"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hfm8k"]
 radius = 32.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wwfud"]
+radius = 42.0119
 
 [node name="Portal" type="Node2D"]
 texture_filter = 1
@@ -55,3 +58,11 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("CircleShape2D_hfm8k")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_wwfud")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

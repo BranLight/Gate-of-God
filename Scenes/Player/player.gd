@@ -140,3 +140,14 @@ func _on_area_2d_body_exited(body: Node2D):
 
 func _note_queue_has_updated():
 	can_send_note_queue = true
+
+
+func _on_glyph_unlock_rune(rune):
+	note_wheel.set_visible(true)
+	get_tree().paused = true
+	await get_tree().create_timer(1.0).timeout
+	$AudioStreamPlayer.play()
+	note_wheel.show_notes.append_array(rune)
+	await get_tree().create_timer(1.0).timeout
+	$AudioStreamPlayer.stop()
+	get_tree().paused = false

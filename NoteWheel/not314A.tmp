@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c60iepk0gcigu"]
+[gd_scene load_steps=28 format=3 uid="uid://c60iepk0gcigu"]
 
 [ext_resource type="Script" path="res://NoteWheel/note_wheel.gd" id="1_kv6ls"]
 [ext_resource type="Script" path="res://NoteWheel/Note Texture/notes.gd" id="2_i0c1v"]
@@ -60,8 +60,55 @@ region = Rect2(19, 7, 5, 5)
 script = ExtResource("2_i0c1v")
 note = ""
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0ouk"]
+atlas = ExtResource("3_dpids")
+region = Rect2(1, 13, 5, 5)
+script = ExtResource("2_i0c1v")
+note = ""
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6k53f"]
+atlas = ExtResource("3_dpids")
+region = Rect2(7, 13, 5, 5)
+script = ExtResource("2_i0c1v")
+note = ""
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km2aj"]
+atlas = ExtResource("3_dpids")
+region = Rect2(13, 13, 5, 5)
+script = ExtResource("2_i0c1v")
+note = ""
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqkxl"]
+atlas = ExtResource("3_dpids")
+region = Rect2(19, 13, 5, 5)
+script = ExtResource("2_i0c1v")
+note = ""
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dp3n"]
+atlas = ExtResource("3_dpids")
+region = Rect2(1, 19, 5, 5)
+script = ExtResource("2_i0c1v")
+note = ""
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhke4"]
+atlas = ExtResource("3_dpids")
+region = Rect2(7, 19, 5, 5)
+script = ExtResource("2_i0c1v")
+note = ""
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk4qr"]
+atlas = ExtResource("3_dpids")
+region = Rect2(13, 19, 5, 5)
+script = ExtResource("2_i0c1v")
+note = ""
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4eaaq"]
+atlas = ExtResource("3_dpids")
+region = Rect2(19, 19, 5, 5)
+script = ExtResource("2_i0c1v")
+note = ""
+
 [node name="NoteWheel" type="Control"]
-process_mode = 3
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -72,7 +119,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("1_kv6ls")
-notes = Array[ExtResource("2_i0c1v")]([SubResource("AtlasTexture_fc4yj"), SubResource("AtlasTexture_o5s43"), SubResource("AtlasTexture_7fhda"), SubResource("AtlasTexture_o02mr"), SubResource("AtlasTexture_ug2cy"), SubResource("AtlasTexture_k6nte"), SubResource("AtlasTexture_2g4jx"), SubResource("AtlasTexture_38k2q")])
+notes = Array[ExtResource("2_i0c1v")]([SubResource("AtlasTexture_fc4yj"), SubResource("AtlasTexture_o5s43"), SubResource("AtlasTexture_7fhda"), SubResource("AtlasTexture_o02mr"), SubResource("AtlasTexture_ug2cy"), SubResource("AtlasTexture_k6nte"), SubResource("AtlasTexture_2g4jx"), SubResource("AtlasTexture_38k2q"), SubResource("AtlasTexture_a0ouk"), SubResource("AtlasTexture_6k53f"), SubResource("AtlasTexture_km2aj"), SubResource("AtlasTexture_qqkxl"), SubResource("AtlasTexture_5dp3n"), SubResource("AtlasTexture_qhke4"), SubResource("AtlasTexture_uk4qr"), SubResource("AtlasTexture_4eaaq")])
 
 [node name="NoteSounds" type="Node" parent="."]
 
