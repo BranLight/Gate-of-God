@@ -1,16 +1,36 @@
-[gd_scene load_steps=24 format=3 uid="uid://fam1hu5j5nu0"]
+[gd_scene load_steps=32 format=3 uid="uid://fam1hu5j5nu0"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_vd2qa"]
 [ext_resource type="Texture2D" uid="uid://dvo4us5hlloq7" path="res://Textures/Button Prompts/xbox_button_color_x.png" id="2_3vf3s"]
 [ext_resource type="Script" path="res://Scenes/Player/camera_2d.gd" id="3_8xga8"]
 [ext_resource type="Texture2D" uid="uid://dtfjxqwpojxcv" path="res://Textures/Snoblin Character/Prototype_Character.png" id="3_lrhv8"]
 [ext_resource type="Texture2D" uid="uid://cunsqg76jlexy" path="res://Textures/Snoblin Character/Shadow.png" id="3_t2u7s"]
+[ext_resource type="Texture2D" uid="uid://ctijwt7bbddew" path="res://Textures/Button Prompts/playstation_button_square.png" id="4_6xbmv"]
+[ext_resource type="Texture2D" uid="uid://duid4agfu7ucf" path="res://Textures/Button Prompts/playstation_button_square_outline.png" id="5_11xda"]
 [ext_resource type="AudioStream" uid="uid://cnq7rygurc4c5" path="res://Audio/Walking/footstep1.wav" id="5_e03ef"]
 [ext_resource type="PackedScene" uid="uid://c60iepk0gcigu" path="res://NoteWheel/note_wheel.tscn" id="5_ojv6h"]
 [ext_resource type="AudioStream" uid="uid://cuuwd1cv8xcjo" path="res://Audio/Walking/footstep2.wav" id="6_bf0ln"]
+[ext_resource type="Texture2D" uid="uid://wvund77m6nlu" path="res://Textures/Button Prompts/keyboard_e.png" id="6_naxck"]
+[ext_resource type="Texture2D" uid="uid://dmncmrhdbl7au" path="res://Textures/Button Prompts/keyboard_e_outline.png" id="7_qi1oh"]
 [ext_resource type="AudioStream" uid="uid://dyf7vg6sl6u5i" path="res://Audio/Walking/footstep4.wav" id="8_vaavn"]
 [ext_resource type="Texture2D" uid="uid://ch1ghka4a7d6v" path="res://Textures/Button Prompts/xbox_button_color_x_outline.png" id="10_o0s4v"]
 [ext_resource type="AudioStream" uid="uid://qls33g8myqlc" path="res://Audio/Sound Effects/Menu2A.wav" id="11_jmo7h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyw4y"]
+atlas = ExtResource("4_6xbmv")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h48e5"]
+atlas = ExtResource("5_11xda")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yx8d4"]
+atlas = ExtResource("6_naxck")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_805nc"]
+atlas = ExtResource("7_qi1oh")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i6g2u"]
 atlas = ExtResource("2_3vf3s")
@@ -24,13 +44,35 @@ region = Rect2(0, 0, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_jyw4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h48e5")
+}],
+"loop": true,
+"name": &"Prompt_ds",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yx8d4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_805nc")
+}],
+"loop": true,
+"name": &"Prompt_pc",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_i6g2u")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oum2y")
 }],
 "loop": true,
-"name": &"Prompt",
+"name": &"Prompt_xbox",
 "speed": 5.0
 }]
 
@@ -261,7 +303,7 @@ script = ExtResource("1_vd2qa")
 visible = false
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_necsa")
-animation = &"Prompt"
+animation = &"Prompt_xbox"
 offset = Vector2(0, -150)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

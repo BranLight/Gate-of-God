@@ -83,7 +83,7 @@ func check_singing():
 func set_button_prompt_display():
 	if(interactable_bodies):
 		button_prompt.show()
-		button_prompt.play("Prompt")
+		button_prompt.play("Prompt_pc")
 	else:
 		button_prompt.hide()
 		button_prompt.stop()

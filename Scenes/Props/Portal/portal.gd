@@ -17,9 +17,9 @@ func _on_player_singing(body, note_queue):
 				level_up.emit(SONGS.portal_songs.find_key(song), self)
 
 
-func _on_area_2d_body_entered(body):
+func _on_area_2d_body_entered(_body):
 	runes.show()
 
 
-func _on_area_2d_body_exited(body):
+func _on_area_2d_body_exited(_body):
 	runes.hide()

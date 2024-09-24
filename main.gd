@@ -11,9 +11,7 @@ func _ready():
 
 
 func _process(_delta):
-	var quit: bool = Input.is_action_pressed("QUIT")
-	if(quit):
-		get_tree().quit()
+	pass
 
 
 func _on_portal_level_up(level_song, portal):

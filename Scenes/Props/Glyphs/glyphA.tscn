@@ -9,7 +9,6 @@ size = Vector2(26, 20)
 
 [node name="GlyphA" type="Node2D" node_paths=PackedStringArray("rune_sprite")]
 script = ExtResource("1_tcg6t")
-rune_index = null
 rune_sprite = NodePath("Runes")
 
 [node name="Shadow" type="Sprite2D" parent="."]

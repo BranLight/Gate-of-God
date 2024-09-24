@@ -623,7 +623,6 @@ position = Vector2(-767, 81)
 
 [node name="GlyphA" parent="Props" instance=ExtResource("12_qn1lb")]
 position = Vector2(40, 304)
-rune_index = Array[int]([])
 
 [node name="GlyphB" parent="Props" instance=ExtResource("13_3tfia")]
 position = Vector2(0, 296)
@@ -646,7 +645,6 @@ position = Vector2(-40, 48)
 
 [node name="GlyphA3" parent="Props" instance=ExtResource("12_qn1lb")]
 position = Vector2(40, -208)
-rune_index = Array[int]([])
 
 [node name="GlyphB3" parent="Props" groups=["interactable"] instance=ExtResource("13_3tfia")]
 position = Vector2(0, -216)
@@ -777,10 +775,8 @@ stream = ExtResource("43_gfl55")
 autoplay = true
 script = SubResource("GDScript_1i7qg")
 
-[node name="Background" parent="." instance=ExtResource("38_03dub")]
-
 [node name="Player" parent="." instance=ExtResource("4_cdq28")]
-position = Vector2(-157, 347)
+position = Vector2(-608, 304)
 
 [node name="PortalSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("38_taxqh")
@@ -801,6 +797,8 @@ position = Vector2(0, -762.5)
 texture = ExtResource("39_038vo")
 region_enabled = true
 region_rect = Rect2(29, 166, 37, 53)
+
+[node name="Background" parent="." instance=ExtResource("38_03dub")]
 
 [connection signal="level_up" from="Portals/Portal" to="." method="_on_portal_level_up"]
 [connection signal="level_up" from="Portals/Portal2" to="." method="_on_portal_level_up"]
